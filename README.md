@@ -1,12 +1,12 @@
+[← J0UH profile](https://github.com/J0UH)
+
 <p align="center">
-  <img src="assets/hero.png" alt="Exchange and market infrastructure system illustration" width="100%" />
+  <img src="assets/hero.webp" alt="Parallel market channels converge through controlled junctions onto one settlement floor" width="100%" />
 </p>
 
 # Exchange and market infrastructure
 
 I have worked across decentralised exchanges, centralised exchange platforms, digital-asset exchange stacks, routing, liquidity, market data, and the operator systems around them. Sometimes that meant building a system directly. Sometimes it meant understanding a large open-source platform, adapting it, and orchestrating the pieces into a product that fit the job.
-
-[Reach out](mailto:ju@jomena.group?subject=Discuss%20Exchange%20and%20market%20infrastructure) | [Book a technical call](mailto:ju@jomena.group?subject=Book%20a%20technical%20call%20about%20Exchange%20and%20market%20infrastructure)
 
 ## The engineering problem
 
@@ -28,17 +28,16 @@ Markets are distributed systems with financial consequences. Quotes age, liquidi
 
 ```mermaid
 flowchart TD
-    n0["Market venues"]
-    n1["Data and indexing"]
-    n2["Routing"]
-    n3["Execution"]
-    n4["Settlement"]
-    n5["Operator control"]
-    n0 --> n1
-    n1 --> n2
-    n2 --> n3
-    n3 --> n4
-    n4 --> n5
+accTitle: Exchange and market infrastructure
+accDescr: Market venues produce time-bound state for routing and execution. Settlement reaches operators only after reconciliation; exceptions return through a recovery path.
+    venues["Market venues"] --> state["Timed market state"]
+    state --> route["Route and execution plan"]
+    route --> execute["Bounded execution"]
+    execute --> settle["Settlement record"]
+    settle --> agree{"State reconciled?"}
+    agree -->|Yes| operator["Operator control"]
+    agree -->|No| exception["Exception and recovery"]
+    exception --> state
 ```
 
 ## Principles that carry across the work
@@ -49,8 +48,8 @@ flowchart TD
 - Credit upstream protocols while owning the adaptation work.
 - Design the operator view as part of the market system.
 
-<sub>Built under the Aryze umbrella. The underlying source and company IP remain private and owned by Aryze. Delivery involved people across engineering, product, operations, compliance, and design. Open-source foundations retain their original attribution and licences.</sub>
+<sub>Public overview only. Source code, customer data, credentials, and private operating details are not included.</sub>
 
 ## Talk through a similar problem
 
-[Tell me what you are building](mailto:ju@jomena.group?subject=I%20am%20building%20something%20in%20Exchange%20and%20market%20infrastructure) or [book a technical call](mailto:ju@jomena.group?subject=Book%20a%20technical%20call%20about%20Exchange%20and%20market%20infrastructure). A fuller portfolio site is in preparation.
+Working on something similar? [Tell me about it](mailto:ju@jomena.group?subject=Exchange%20and%20market%20infrastructure).
