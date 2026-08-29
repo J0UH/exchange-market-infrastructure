@@ -27,7 +27,7 @@ Markets are distributed systems with financial consequences. Quotes age, liquidi
 ## How the pieces fit
 
 ```mermaid
-flowchart LR
+flowchart TD
     n0["Market venues"]
     n1["Data and indexing"]
     n2["Routing"]
