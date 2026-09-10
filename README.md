@@ -1,30 +1,25 @@
 [← J0UH profile](https://github.com/J0UH)
 
-<p align="center">
-  <img src="assets/hero.webp" alt="Parallel market channels converge through controlled junctions onto one settlement floor" width="100%" />
-</p>
-
 # Exchange and market infrastructure
 
-I have worked across decentralised exchanges, centralised exchange platforms, digital-asset exchange stacks, routing, liquidity, market data, and the operator systems around them. Sometimes that meant building a system directly. Sometimes it meant understanding a large open-source platform, adapting it, and orchestrating the pieces into a product that fit the job.
+Work across exchanges, routing, liquidity, and the systems that help people understand what happened to a trade.
 
-## The engineering problem
+<img src="assets/hero-v2.webp" alt="Exchange and market infrastructure illustrated as a crafted architectural model, with exposed sketch and structural framing" width="100%" />
 
-Markets are distributed systems with financial consequences. Quotes age, liquidity moves, providers disagree, transactions settle later, and operators still need one coherent account of what happened.
+An exchange compresses a lot of moving parts into a small interaction. Behind a quote are venues, balances, liquidity, and assumptions about time. Those assumptions can change while someone is deciding what to do.
 
-## Systems and project pages
+My work here spans decentralised exchanges, centralised exchange platforms, and the services around them. Some pieces were built directly. Others involved understanding established open-source systems and adapting them to a different product and operating environment.
 
-| Project | What it covers |
-| --- | --- |
-| [Decentralised exchange platform](https://github.com/J0UH/dex-platform) | Swap interfaces, protocol integration, transaction state, and liquidity-aware product design. |
-| [Smart order routing](https://github.com/J0UH/smart-order-routing) | Route discovery, quote comparison, execution planning, and reusable market SDKs. |
-| [Market data and indexing](https://github.com/J0UH/market-data-indexing) | Event-derived market state, subgraphs, analytics, and data products for exchange systems. |
-| [Limit order infrastructure](https://github.com/J0UH/limit-order-infrastructure) | Signed orders, relay services, indexed state, expiry, and execution visibility. |
-| [CEX and DAX platform adaptation](https://github.com/J0UH/cex-platform-adaptation) | Architecture and adaptation of open-source centralised and digital-asset exchange platforms. |
-| [Multi-asset money platform](https://github.com/J0UH/multi-asset-money-platform) | A modular product surface for issuing, managing, swapping, and integrating digital assets. |
-| [Trading and treasury automation](https://github.com/J0UH/trading-treasury-automation) | Controlled market and treasury workflows with explicit risk, evidence, and operator authority. |
+## Following a trade beyond the button
 
-## How the pieces fit
+I keep quoted, submitted, executed, and settled state distinct. Each tells a different part of the story. Combining them into one reassuring status makes it harder to explain a delay or recover from a disagreement between systems.
+
+The routing and data layers need the same care. A quote should carry its assumptions; a derived market view should retain its source and timing. Operators then have something solid to use when reconciling the result.
+
+This area is a good example of why I like working across a whole system. The interface, protocol integration, and operator tools all influence whether the product makes sense.
+
+<details>
+<summary>A closer look at the technical flow</summary>
 
 ```mermaid
 flowchart TD
@@ -40,16 +35,18 @@ accDescr: Market venues produce time-bound state for routing and execution. Sett
     exception --> state
 ```
 
-## Principles that carry across the work
+</details>
 
-- Keep quoted, submitted, executed, and settled state distinct.
-- Attach assumptions and source time to market data.
-- Model recovery and reconciliation before scaling volume.
-- Credit upstream protocols while owning the adaptation work.
-- Design the operator view as part of the market system.
+## Explore the projects
 
-<sub>Public overview only. Source code, customer data, credentials, and private operating details are not included.</sub>
+- [Decentralised exchange platform](https://github.com/J0UH/dex-platform): Swap interfaces, protocol integration, transaction state, and liquidity-aware product design.
+- [Smart order routing](https://github.com/J0UH/smart-order-routing): Route discovery, quote comparison, execution planning, and reusable market SDKs.
+- [Market data and indexing](https://github.com/J0UH/market-data-indexing): Event-derived market state, subgraphs, analytics, and data products for exchange systems.
+- [Limit order infrastructure](https://github.com/J0UH/limit-order-infrastructure): Signed orders, relay services, indexed state, expiry, and execution visibility.
+- [CEX and DAX platform adaptation](https://github.com/J0UH/cex-platform-adaptation): Architecture and adaptation of open-source centralised and digital-asset exchange platforms.
+- [Multi-asset money platform](https://github.com/J0UH/multi-asset-money-platform): A modular product surface for issuing, managing, swapping, and integrating digital assets.
+- [Trading and treasury automation](https://github.com/J0UH/trading-treasury-automation): Controlled market and treasury workflows with explicit risk, evidence, and operator authority.
 
-## Talk through a similar problem
+Working on a similar problem? [Tell me what you are building](mailto:ju@jomena.group?subject=Exchange%20and%20market%20infrastructure).
 
-Working on something similar? [Tell me about it](mailto:ju@jomena.group?subject=Exchange%20and%20market%20infrastructure).
+*This is a public account of the work. Source code and private operating details are not included in this repository.*
