@@ -4,7 +4,7 @@
 
 Work across exchanges, routing, liquidity, and the systems that help people understand what happened to a trade.
 
-<img src="assets/hero-v2.webp" alt="Exchange and market infrastructure illustrated as a crafted architectural model, with exposed sketch and structural framing" width="100%" />
+<img src="assets/hero-v3.webp" alt="Four graphite market routes converge on a teal hub with two outgoing paths" width="100%" />
 
 An exchange compresses a lot of moving parts into a small interaction. Behind a quote are venues, balances, liquidity, and assumptions about time. Those assumptions can change while someone is deciding what to do.
 
