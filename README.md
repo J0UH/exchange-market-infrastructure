@@ -1,25 +1,26 @@
-[← J0UH profile](https://github.com/J0UH)
+[← Profile](https://github.com/J0UH)
 
 # Exchange and market infrastructure
 
-Work across exchanges, routing, liquidity, and the systems that help people understand what happened to a trade.
+Quote to settlement across venues, routes, and liquidity — interfaces and operator tools that explain each step and recover when systems disagree.
 
-<img src="assets/hero-v3.webp" alt="Four graphite market routes converge on a teal hub with two outgoing paths" width="100%" />
+*Professional work on exchange and market systems. Implementation stays with the companies that own it — [about these pages](https://github.com/J0UH/J0UH/blob/main/ABOUT.md).*
 
-An exchange compresses a lot of moving parts into a small interaction. Behind a quote are venues, balances, liquidity, and assumptions about time. Those assumptions can change while someone is deciding what to do.
+## Problem
 
-My work here spans decentralised exchanges, centralised exchange platforms, and the services around them. Some pieces were built directly. Others involved understanding established open-source systems and adapting them to a different product and operating environment.
+An exchange compresses venues, balances, liquidity, and timing assumptions into a small interaction. Those assumptions can change while someone is still deciding. Operators need a solid story when systems disagree — not one reassuring status that hides the delay.
 
-## Following a trade beyond the button
+## What I built
 
-I keep quoted, submitted, executed, and settled state distinct. Each tells a different part of the story. Combining them into one reassuring status makes it harder to explain a delay or recover from a disagreement between systems.
+Work across decentralised and centralised exchange platforms and the services around them: routing, market data and indexing, limit-order infrastructure, treasury automation, and the control surfaces that follow a trade past the button. Some pieces were built directly; others adapted established open-source systems to a different product and operating environment.
 
-The routing and data layers need the same care. A quote should carry its assumptions; a derived market view should retain its source and timing. Operators then have something solid to use when reconciling the result.
+## Key decisions
 
-This area is a good example of why I like working across a whole system. The interface, protocol integration, and operator tools all influence whether the product makes sense.
+- **Keep quoted, submitted, executed, and settled state distinct.** Each tells a different part of the story. Mixing them makes delays and disagreements harder to explain.
+- **Quotes carry assumptions; derived views keep source and timing.** Routing and data layers should leave operators something solid to reconcile against.
+- **Interface, protocol, and operator tools are one product.** The trade only makes sense when all three stay honest about what happened.
 
-<details>
-<summary>A closer look at the technical flow</summary>
+## Architecture
 
 ```mermaid
 flowchart TD
@@ -35,18 +36,19 @@ accDescr: Market venues produce time-bound state for routing and execution. Sett
     exception --> state
 ```
 
-</details>
+## What the work covers
 
-## Explore the projects
+- Decentralised and centralised exchange surfaces
+- Smart order routing and quote comparison
+- Market data, indexing, and derived views
+- Limit-order and relay infrastructure
+- Trading and treasury automation with explicit authority
+- Operator recovery when settlement and market state disagree
 
-- [Decentralised exchange platform](https://github.com/J0UH/dex-platform): Swap interfaces, protocol integration, transaction state, and liquidity-aware product design.
-- [Smart order routing](https://github.com/J0UH/smart-order-routing): Route discovery, quote comparison, execution planning, and reusable market SDKs.
-- [Market data and indexing](https://github.com/J0UH/market-data-indexing): Event-derived market state, subgraphs, analytics, and data products for exchange systems.
-- [Limit order infrastructure](https://github.com/J0UH/limit-order-infrastructure): Signed orders, relay services, indexed state, expiry, and execution visibility.
-- [CEX and DAX platform adaptation](https://github.com/J0UH/cex-platform-adaptation): Architecture and adaptation of open-source centralised and digital-asset exchange platforms.
-- [Multi-asset money platform](https://github.com/J0UH/multi-asset-money-platform): A modular product surface for issuing, managing, swapping, and integrating digital assets.
-- [Trading and treasury automation](https://github.com/J0UH/trading-treasury-automation): Controlled market and treasury workflows with explicit risk, evidence, and operator authority.
+## Related work
+
+- [MoneyOS](https://github.com/J0UH/moneyos-platform)
+- [Stablecoin and programmable asset infrastructure](https://github.com/J0UH/stablecoin-infrastructure)
+- [Open finance and payments](https://github.com/J0UH/open-finance-payments)
 
 Working on a similar problem? [Tell me what you are building](mailto:ju@jomena.group?subject=Exchange%20and%20market%20infrastructure).
-
-*This is a public account of the work. Source code and private operating details are not included in this repository.*
